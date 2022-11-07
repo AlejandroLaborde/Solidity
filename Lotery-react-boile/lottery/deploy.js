@@ -3,9 +3,9 @@ const Web3 = require('web3');
 const { abi, evm } = require('./compile');
 
 const provider = new HDWalletProvider(
-  'YOUR_MNEMONIC',
+  'illness income trouble gravity crunch vacuum open another solution mushroom major hello',
   // remember to change this to your own phrase!
-  'YOUR_INFURA_URL'
+  'https://sepolia.infura.io/v3/ea384006729545d297405fbc220c04e7'
   // remember to change this to your own endpoint!
 );
 
@@ -18,7 +18,7 @@ const deploy = async () => {
 
   const result = await new web3.eth.Contract(abi)
     .deploy({ data: evm.bytecode.object })
-    .send({ gas: '1000000', from: accounts[0] });
+    .send({ gas: '10000000', from: accounts[0] });
 
   console.log(JSON.stringify(abi));
   console.log('Contract deployed to', result.options.address);
